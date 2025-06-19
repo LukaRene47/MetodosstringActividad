@@ -8,17 +8,20 @@ let botonContador = document.getElementById("botonContador");
 let botonAcronimos = document.getElementById("botonAcronimos");
 let botonBuscador = document.getElementById("botonBuscador");
 
+
 // no se q son , saludos
 let resultAcron = document.getElementById("result-acron") 
 let texto_input = document.getElementById("texto");
 let texto = "";
 
+//cosas para la ejecucion del buscador
+let buscadorTexto = document.getElementById("contenedorinputBuscador");
+let palabraBuscar = document.getElementById("palabraBuscador");
+let ejecucionBuscar = document.getElementById("ejecutarBuscar")
+
 // oyee esta mal xd deja lo arreglo
 // alguien puede hacer una funcion mejorando esto? pa ahorrar espacio polfa
 
-function cambDiv(){
-
-}
 botonContador.addEventListener("click", function(){
     seccContador.style.display ='block';
     seccBuscador.style.display ='none';
@@ -35,6 +38,8 @@ botonBuscador.addEventListener("click", function(){
     seccBuscador.style.display ='block';
     seccAcronimo.style.display ='none';
 });
+
+// eventos de ejecucion de cada seccion
 texto_input.addEventListener("input",()=>{
     texto = texto_input.value;
 });
@@ -49,7 +54,8 @@ botonContador.addEventListener("click",()=>{
     // split() separa la cadena a partir de espacios y cuenta la cadena más larga
 });
 
-botonBuscador.addEventListener("click",()=>{
-    
+//ejecucion de la seccion buscador
+ejecucionBuscar.addEventListener("click",()=>{
+
     
 });

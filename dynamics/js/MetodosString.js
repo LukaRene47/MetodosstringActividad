@@ -24,8 +24,9 @@ botonContador.addEventListener("click", () => {
   divAcronimo.style.display = "none";
   divBuscador.style.display = "none";
 
-  let totalChars = texto.length;
-  let totalWords = texto.trim().split(/\s+/).filter(p => p !== "").length;
+  let textoContador = inputContador.value;
+  let totalChars = textoContador.length;
+  let totalWords = textoContador.trim().split(/\s+/).filter(p => p !== "").length;
   resultadoContador.innerHTML = `<p>Caracteres: ${totalChars}</p><p>Palabras: ${totalWords}</p>`;
 });
 

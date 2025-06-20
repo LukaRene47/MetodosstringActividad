@@ -17,29 +17,30 @@
     <button id="botonAcronimos" class="boton">Acrónimos</button>
   </div>
 
-    <div id="contador" style="display:none">
+  <div id="contador" style="display:none" class="caja">
     <label for="inputContador">Texto a analizar:</label>
-    <input type="text" id="inputContador" placeholder="Escribe algo para contar...">
+    <input type="text" class="texto" id="inputContador" placeholder="Escribe algo para contar...">
     <div id="resultadoContador">Aquí aparecerán los resultados</div>
+    <button id="contadorBtnEj" class="boton2"> Ejecutar</button>
   </div>
 
-  <div id="acronimo" style="display:none">
-    <input type="text" id="texto" placeholder="Escribe tu texto aquí...">
-    <button id="botonAcronimo">Generar Acrónimo</button>
+  <div id="acronimo" style="display:none" class="caja">
+    <input type="text" class="texto" placeholder="Escribe tu texto aquí...">
+    <button id="botonAcronimo" class="boton2">Generar Acrónimo</button>
     <div id="result-acron">El resultado aparecerá aquí...</div>
   </div>
 
-  <div id="buscador" style="display:none">
+  <div id="buscador" style="display:none" class="caja">
     <label for="contenedorinput">Texto:</label>
-    <input type="text" id="contenedorinput" placeholder='Ejemplo: "Hola mundo"'>
+    <input type="text" class="texto" id="contenedorinput" placeholder='Ejemplo: "Hola mundo"'>
 
     <label for="palabraBuscador">Palabra a buscar:</label>
-    <input type="text" id="palabraBuscador" placeholder='Ejemplo: Hola'>
+    <input type="text" class="texto" id="palabraBuscador" placeholder='Ejemplo: Hola'>
 
-    <button id="ejecutar-btn">Ejecutar</button>
+    <button id="ejecutar-btn" class="boton2">Ejecutar</button>
     <div id="result-pantalla">El resultado aparecerá aquí...</div>
   </div>
 
-  <script src="../dynamics/js/MetodosString.js"></script>
+  <script src="../Dynamics/js/MetodosString.js"></script>
 </body>
 </html>

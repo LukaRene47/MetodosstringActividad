@@ -1,61 +1,60 @@
-//secciones de el archivo
-let seccContador = document.getElementById("contador");
-let seccAcronimo = document.getElementById("acronimo");
-let seccBuscador = document.getElementById("buscador")
-
-//botones de seleccion de archivos
 let botonContador = document.getElementById("botonContador");
 let botonAcronimos = document.getElementById("botonAcronimos");
 let botonBuscador = document.getElementById("botonBuscador");
 
+let inputContador = document.getElementById("inputContador");
+let resultadoContador = document.getElementById("resultadoContador");
 
-// no se q son , saludos
-let resultAcron = document.getElementById("result-acron") 
+let divContador = document.getElementById("contador");
+let divAcronimo = document.getElementById("acronimo");
+let divBuscador = document.getElementById("buscador");
+
 let texto_input = document.getElementById("texto");
+let resultAcron = document.getElementById("result-acron");
+
+let contenedorInput = document.getElementById("contenedorinput");
+let palabraBuscar = document.getElementById("palabraBuscador");
+let ejecutarBuscar = document.getElementById("ejecutar-btn");
+let resultPantalla = document.getElementById("result-pantalla");
+
 let texto = "";
 
-//cosas para la ejecucion del buscador
-let buscadorTexto = document.getElementById("contenedorinputBuscador");
-let palabraBuscar = document.getElementById("palabraBuscador");
-let ejecucionBuscar = document.getElementById("ejecutarBuscar")
+botonContador.addEventListener("click", () => {
+  divContador.style.display = "block";
+  divAcronimo.style.display = "none";
+  divBuscador.style.display = "none";
 
-// oyee esta mal xd deja lo arreglo
-// alguien puede hacer una funcion mejorando esto? pa ahorrar espacio polfa
-
-botonContador.addEventListener("click", function(){
-    seccContador.style.display ='block';
-    seccBuscador.style.display ='none';
-    seccAcronimo.style.display ='none';
-
-});
-botonAcronimos.addEventListener("click", function(){
-    seccContador.style.display ='none';
-    seccBuscador.style.display ='none';
-    seccAcronimo.style.display ='block';
-});
-botonBuscador.addEventListener("click", function(){
-    seccContador.style.display ='none';
-    seccBuscador.style.display ='block';
-    seccAcronimo.style.display ='none';
+  let totalChars = texto.length;
+  let totalWords = texto.trim().split(/\s+/).filter(p => p !== "").length;
+  resultadoContador.innerHTML = `<p>Caracteres: ${totalChars}</p><p>Palabras: ${totalWords}</p>`;
 });
 
-// eventos de ejecucion de cada seccion
-texto_input.addEventListener("input",()=>{
-    texto = texto_input.value;
+botonAcronimos.addEventListener("click", () => {
+  divContador.style.display = "none";
+  divAcronimo.style.display = "block";
+  divBuscador.style.display = "none";
 });
 
-botonAcronimos.addEventListener("click",()=>{
-    texto.slice("");
-    resultAcron.innerHTML = `"${texto}"`;
+botonBuscador.addEventListener("click", () => {
+  divContador.style.display = "none";
+  divAcronimo.style.display = "none";
+  divBuscador.style.display = "block";
 });
 
-botonContador.addEventListener("click",()=>{
-    
-    // split() separa la cadena a partir de espacios y cuenta la cadena más larga
+texto_input.addEventListener("input", () => {
+  texto = texto_input.value;
 });
 
-//ejecucion de la seccion buscador
-ejecucionBuscar.addEventListener("click",()=>{
+document.getElementById("botonAcronimo").addEventListener("click", () => {
+  let palabras = texto.trim().split(/\s+/);
+  let acronimo = palabras.map(p => p.charAt(0).toUpperCase()).join("");
+  resultAcron.textContent = `Acrónimo: ${acronimo}`;
+});
 
-    
+ejecutarBuscar.addEventListener("click", () => {
+  let textoBase = contenedorInput.value.toLowerCase();
+  let palabra = palabraBuscar.value.toLowerCase();
+  let coincidencias = (textoBase.match(new RegExp(palabra, "g")) || []).length;
+
+  resultPantalla.innerHTML = `"${palabra}" aparece <strong>${coincidencias}</strong> vez/veces.`;
 });

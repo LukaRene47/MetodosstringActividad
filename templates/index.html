@@ -1,51 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../statics/css/MetodosString.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Juego de Palabras</title>
+  <link rel="stylesheet" href="../statics/css/MetodosString.css">
 </head>
 <body>
-    <div id="divEncabezado">
-        <h1>Juego de Palabras</h1>
-    </div>
-    <div id="Contenedorbtns">
-        <button id="botonContador" class="boton">Contador</button>
-        <button id="botonBuscador" class="boton">Buscador</button>
-        <button id="botonAcronimos" class="boton">Acronimos</button>
-    </div>
+  <div id="divEncabezado">
+    <h1>Juego de Palabras</h1>
+  </div>
 
-    <!--Todo lo de contador-->
-    <div id="contador" style.display="none">
-        <p></p>
-    </div>
-    <!--Todo lo de acronimo-->
-    <div id="acronimo" style.dysplay="none">
-        <button id="botonAcronimo">Acronimo</button>
-        <input type="text" id="texto" placeholder="Escribe tu texto aquí...">
-        <div id="result-acron">
-                El resultado aparecerá aquí...
-        </div>
-    </div>
-    <!--Todo lo de buscador-->
-    <div id="buscador" style.dysplay="block">
-        <h2>Buscador</h1>
-        <div id="buscadorContenedor">
-            <label for="texto-input">Texto:</label>
-            <input type="text" id="contenedorinput" placeholder='Ejemplo: "Hola mundo"'>
+  <div id="Contenedorbtns">
+    <button id="botonContador" class="boton">Contador</button>
+    <button id="botonBuscador" class="boton">Buscador</button>
+    <button id="botonAcronimos" class="boton">Acrónimos</button>
+  </div>
 
-            <label for="palabraBuscar">Palabra a buscar:</label>
-            <input type="text" id="palabraBuscador" placeholder='Ejemplo: Hola'>
-            
-            <button id="ejecutar-btn" class="botones">Ejecutar</button>
-            
-            <div class="result-pantalla" id="result-pantalla">
-                El resultado aparecerá aquí...
-            </div>
-        </div>
-    </div>
-    
+    <div id="contador" style="display:none">
+    <label for="inputContador">Texto a analizar:</label>
+    <input type="text" id="inputContador" placeholder="Escribe algo para contar...">
+    <div id="resultadoContador">Aquí aparecerán los resultados</div>
+  </div>
+
+  <div id="acronimo" style="display:none">
+    <input type="text" id="texto" placeholder="Escribe tu texto aquí...">
+    <button id="botonAcronimo">Generar Acrónimo</button>
+    <div id="result-acron">El resultado aparecerá aquí...</div>
+  </div>
+
+  <div id="buscador" style="display:none">
+    <label for="contenedorinput">Texto:</label>
+    <input type="text" id="contenedorinput" placeholder='Ejemplo: "Hola mundo"'>
+
+    <label for="palabraBuscador">Palabra a buscar:</label>
+    <input type="text" id="palabraBuscador" placeholder='Ejemplo: Hola'>
+
+    <button id="ejecutar-btn">Ejecutar</button>
+    <div id="result-pantalla">El resultado aparecerá aquí...</div>
+  </div>
+
+  <script src="../dynamics/js/MetodosString.js"></script>
 </body>
-<script src="../dynamics/js/MetodosString.js"></script>
 </html>

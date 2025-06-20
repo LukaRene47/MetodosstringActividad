@@ -23,11 +23,6 @@ botonContador.addEventListener("click", () => {
   divContador.style.display = "block";
   divAcronimo.style.display = "none";
   divBuscador.style.display = "none";
-
-  let textoContador = inputContador.value;
-  let totalChars = textoContador.length;
-  let totalWords = textoContador.trim().split(/\s+/).filter(p => p !== "").length;
-  resultadoContador.innerHTML = `<p>Caracteres: ${totalChars}</p><p>Palabras: ${totalWords}</p>`;
 });
 
 botonAcronimos.addEventListener("click", () => {
@@ -58,4 +53,12 @@ ejecutarBuscar.addEventListener("click", () => {
   let coincidencias = (textoBase.match(new RegExp(palabra, "g")) || []).length;
 
   resultPantalla.innerHTML = `"${palabra}" aparece <strong>${coincidencias}</strong> vez/veces.`;
+
+});
+let ejecutarContador = document.getElementById("contadorBtnEj")
+ejecutarContador.addEventListener("click", () =>{
+  let textoContador = inputContador.value;
+  let totalChars = textoContador.length;
+  let totalWords = textoContador.trim().split(/\s+/).filter(p => p !== "").length;
+  resultadoContador.innerHTML = `<p>Caracteres: ${totalChars}</p><p>Palabras: ${totalWords}</p>`;
 });
